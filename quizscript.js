@@ -2,8 +2,10 @@ var timerEl = document.querySelector("#timer");
 var startBtnEl = document.querySelector("#startBtn");
 var startPageEl = document.querySelector("#startPage");
 var quizPageEl = document.querySelector("#quizPage");
-var scorePageEl = document.querySelector("#scorePage")
-var scoreEl = document.querySelector("#score")
+var scorePageEl = document.querySelector("#scorePage");
+var scoreEl = document.querySelector("#score");
+var inlineFormInputEl = document.querySelector("#inlineFormInput");
+var submitEl = document.querySelector("#submit")
 var secondsLeft = 75;
 var timerInterval = null;
 
@@ -125,9 +127,9 @@ function checkAnswer(event) {
     }
 
     if (answer === correctEl) {
-        alert("Right");
+        //alert("Right");
     } else {
-        alert("Wrong");
+        //alert("Wrong");
         secondsLeft -= 10
         if (secondsLeft < 0) {
             secondsLeft = 0;
@@ -143,15 +145,21 @@ function checkAnswer(event) {
         scorePageEl.classList.remove("hide");
         clearInterval(timerInterval);
         scoreEl.textContent = secondsLeft + 1;
+        timerEl.textContent = secondsLeft + 1;
     }
 }
 
+submitEl.addEventListener("click", function() {
+    event.preventDefault();
+    var initials = inlineFormInputEl.value;
+    var score = secondsLeft + 1;
+    localStorage.setItem(initials, score);
+    window.location.href = "highscore.html";
+})
 
 
 
 
 
-//need to save the initials and score to the highscores page
-//need to save scores/initials on highscores page locally
 //need to delete all scores/initials when 'clear scores' button is pressed
 //need to return to startPage when 'go back' button on highscores page is pressed
