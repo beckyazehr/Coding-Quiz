@@ -24,34 +24,62 @@ startBtnEl.addEventListener("click", function() {
     startQuiz();
 })
 
-var questions = {
-    "question1": {
-        "q1": "Commonly used data types DO NOT include:",
-        "options1" : ["1. strings", "2. booleans", "3. alerts", "4. numbers"],
-        "correctOpt1" : "3. alerts"
-    },
-    "question2": {
-        "q2": "The condition in an if/else statement is enclosed within ________.",
-        "options2" : ["1. quotes", "2. curly brackets", "3. parentheses", "4. square brackets"],
-        "correctOpt2" : "3. parentheses"
-    },
-    "question3": {
-        "q3": "Arrays in JavaScript can be used to store ______.",
-        "options3" : ["1. numbers and strings", "2. other arrays", "3. booleans", "4. all of the above"],
-        "correctOpt3" : "4. all of the above"
-    },
-    "question4": {
-        "q4": "String values must be enclosed within _____ when being assigned to variables.",
-        "options4" : ["1. commas", "2. curly brackets", "3. quotes", "4. parentheses"],
-        "correctOpt4" : "3. quotes"
-    },
-    "question5": {
-        "q5": "A very useful tool used during development and debugging for printing content to the debugger is:",
-        "options5" : ["1. JavaScript", "2. terminal/bash", "3. for loops", "4. console.log"],
-        "correctOpt5" : "4. console.log"
-    },
-}
+var quizQuestionEl = document.querySelector("#quizQuestion");
+var option1El = document.querySelector("#option1");
+var option2El = document.querySelector("#option2");
+var option3El = document.querySelector("#option3");
+var option4El = document.querySelector("#option4");
 
+var questions = [
+    {
+    "question": "Commonly used data types DO NOT include:",
+    "option1" : "1. strings",
+    "option2" : "2. booleans",
+    "option3" : "3. alerts",
+    "option4" : "4. numbers",
+    "correctOpt" : "3. alerts"
+    },
+    {
+    "question": "The condition in an if/else statement is enclosed within ________.",
+    "option1" : "1. quotes", 
+    "option2" : "2. curly brackets", 
+    "option3" : "3. parentheses", 
+    "option4" : "4. square brackets",
+    "correctOpt" : "3. parentheses"
+    },
+    {
+    "question": "Arrays in JavaScript can be used to store ______.",
+    "option1" : "1. numbers and strings", 
+    "option2" : "2. other arrays", 
+    "option3" : "3. booleans", 
+    "option4" : "4. all of the above",
+    "correctOpt" : "4. all of the above"
+    },
+    {
+    "question": "String values must be enclosed within _____ when being assigned to variables.",
+    "option1" : "1. commas", 
+    "option2" : "2. curly brackets", 
+    "option3" : "3. quotes", 
+    "option4" : "4. parentheses",
+    "correctOpt" : "3. quotes"
+    },
+    {
+    "question": "A very useful tool used during development and debugging for printing content to the debugger is:",
+    "option1" : "1. JavaScript", 
+    "option2" : "2. terminal/bash", 
+    "option3" : "3. for loops", 
+    "option4" : "4. console.log",
+    "correctOpt" : "4. console.log"
+    },
+]
+
+
+
+//var q1Selection = 
+
+questions.question1.options.addEventListener("click", function() {
+
+})
 
 
 
