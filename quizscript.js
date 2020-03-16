@@ -1,22 +1,34 @@
 var timerEl = document.querySelector("#timer");
+var startBtnEl = document.querySelector("#startBtn");
+var startPageEl = document.querySelector("#startPage");
+var quizPageEl = document.querySelector("#quizPage");
 
 function setTime(secondsLeft) {
     var timerInterval = setInterval(function() {
-        secondsLeft--;
-        timerEl.textContent = secondsLeft;
-
-        
         if(secondsLeft === 0) {
             clearInterval(timerInterval);
         }
+
+        timerEl.textContent = secondsLeft;
+        secondsLeft--;
     }, 1000)
 }
 
-setTime(5);
+function startQuiz() {
+    setTime(5);
+    startPageEl.classList.add("hide");
+    quizPageEl.classList.remove("hide");
+    //change the page
+}
+
+startBtnEl.addEventListener("click", function() {
+    startQuiz();
+})
 
 
-//need timer to start when 'start game' button is pressed
-//need startPage to populate first and change to quizPage when 'start quiz' button is pressed
+
+
+
 //need quizPage to disappear and scorePage to appear when final question is answered
 //need questions and answer options inputted
 //need correct answer to light green and incorrect answer to light right on click
