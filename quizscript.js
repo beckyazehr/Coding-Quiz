@@ -84,35 +84,51 @@ function renderQuestion() {
 renderQuestion();
 
 //make sure user has clicked on one of the options?
-document.addEventListener("click", function(event) {
-    answer = event.target.value;
-    checkAnswer();
+option1El.addEventListener("click", function (event) {
+    checkAnswer(event);
 })
+option2El.addEventListener("click", function (event) {
+    checkAnswer(event);
+})
+option3El.addEventListener("click", function (event) {
+    checkAnswer(event);
+})
+option4El.addEventListener("click", function (event) {
+    checkAnswer(event);
+})
+/*
+document.addEventListener("click", function(event) {
+    checkAnswer(event);
+})
+*/
 
 function checkAnswer(event) {
-    console.log(event)
-    var answer = event.target.value;
-    if (answer === questions[runningQuestionIndex].correctOpt) {
-    answerIsCorrect();
-    } else {
-    answerIsWrong();
+    var answer = event.currentTarget;
+    //console.log(answer === option1El)
+
+    var correctEl = null;
+    if (questions[runningQuestionIndex].correctOpt === "option1") {
+        correctEl = option1El;
+    } else if (questions[runningQuestionIndex].correctOpt === "option2") {
+        correctEl = option2El
+    } else if (questions[runningQuestionIndex].correctOpt === "option3") {
+        correctEl = option3El
+    } else if (questions[runningQuestionIndex].correctOpt === "option4") {
+        correctEl = option4El
     }
+
+    if (answer === correctEl) {
+        alert("Right");
+    } else {
+        alert("Wrong");
+    }
+
     if (runningQuestionIndex < lastQuestionIndex) {
         runningQuestionIndex++;
         renderQuestion();
     }
 }
 
-checkAnswer(event);
-
-//do correct and incorrect work? can I move this to the checkAnswer function?
-function answerIsCorrect() {
-    document.getElementById(runningQuestionIndex).style.backgroundColor = "green";
-}
-
-function answerIsWrong() {
-    document.getElementById(runningQuestionIndex).style.backgroundColor = "red";
-}
 
 
 
