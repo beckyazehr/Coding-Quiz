@@ -10,3 +10,12 @@ for (var i = 0; i < localStorage.length; i++) {
     scoreEl.textContent = initials + " - " + score;
     scoreListEl.appendChild(scoreEl);
 }
+
+clearScoresEl.addEventListener("click", function() {
+    localStorage.clear();
+    window.location.href = "highscore.html";
+})
+
+goBackEl.addEventListener("click", function() {
+    window.location.href = "quiz.html";
+})

@@ -158,8 +158,3 @@ submitEl.addEventListener("click", function() {
 })
 
 
-
-
-
-//need to delete all scores/initials when 'clear scores' button is pressed
-//need to return to startPage when 'go back' button on highscores page is pressed
