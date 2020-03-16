@@ -155,11 +155,3 @@ function checkAnswer(event) {
 //need to save scores/initials on highscores page locally
 //need to delete all scores/initials when 'clear scores' button is pressed
 //need to return to startPage when 'go back' button on highscores page is pressed
-
-/*nextEl.addEventListener("click", function() {
-    i++
-    if (i > images.length -1) {
-        i = 0;
-    }
-    imagesEl.setAttribute("src", images[i])   
-}) */

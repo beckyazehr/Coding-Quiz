@@ -4,12 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>High Scores</title>
-
+    <!--CSS styling-->
+    <link rel="stylesheet" href="style.css">
     <!--Bootstrap CSS-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
 </head>
 <body>
+    <div class = "container">
+        <div class="row" id="highscorePage">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <h1>Highscores</h1>
+                <div id = "scoreList"></div>
+                <button id="goBack" type="button" class="btn btn-primary">Go Back</button>
+                <button id="clearScores" type="button" class="btn btn-primary">Clear High Scores</button>
+            </div>
+            <div class="col-3"></div>
+        </div>
+    </div>
     
+    
+    <script src="quizscript.js"></script>
 </body>
 </html>
