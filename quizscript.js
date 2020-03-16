@@ -127,9 +127,9 @@ function checkAnswer(event) {
     }
 
     if (answer === correctEl) {
-        //alert("Right");
+        alert("Right");
     } else {
-        //alert("Wrong");
+        alert("Wrong");
         secondsLeft -= 10
         if (secondsLeft < 0) {
             secondsLeft = 0;
