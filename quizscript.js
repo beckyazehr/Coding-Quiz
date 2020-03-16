@@ -38,32 +38,28 @@ var questions = [
     "option3" : "3. alerts",
     "option4" : "4. numbers",
     "correctOpt" : "3. alerts"
-    },
-    {
+    },{
     "question": "The condition in an if/else statement is enclosed within ________.",
     "option1" : "1. quotes", 
     "option2" : "2. curly brackets", 
     "option3" : "3. parentheses", 
     "option4" : "4. square brackets",
     "correctOpt" : "3. parentheses"
-    },
-    {
+    },{
     "question": "Arrays in JavaScript can be used to store ______.",
     "option1" : "1. numbers and strings", 
     "option2" : "2. other arrays", 
     "option3" : "3. booleans", 
     "option4" : "4. all of the above",
     "correctOpt" : "4. all of the above"
-    },
-    {
+    },{
     "question": "String values must be enclosed within _____ when being assigned to variables.",
     "option1" : "1. commas", 
     "option2" : "2. curly brackets", 
     "option3" : "3. quotes", 
     "option4" : "4. parentheses",
     "correctOpt" : "3. quotes"
-    },
-    {
+    },{
     "question": "A very useful tool used during development and debugging for printing content to the debugger is:",
     "option1" : "1. JavaScript", 
     "option2" : "2. terminal/bash", 
@@ -73,13 +69,20 @@ var questions = [
     },
 ]
 
+var lastQuestionIndex = questions.length -1;
+var runningQuestionIndex = 0;
 
+function renderQuestion() {
+    var q = questions[runningQuestionIndex];
+    quizQuestionEl.innerHTML = q.question;
+    option1El.innerHTML = q.option1;
+    option2El.innerHTML = q.option2;
+    option3El.innerHTML = q.option3;
+    option4El.innerHTML = q.option4;
+}
 
-//var q1Selection = 
+renderQuestion();
 
-questions.question1.options.addEventListener("click", function() {
-
-})
 
 
 
