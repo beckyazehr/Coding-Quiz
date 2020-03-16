@@ -37,40 +37,40 @@ var questions = [
     "option2" : "2. booleans",
     "option3" : "3. alerts",
     "option4" : "4. numbers",
-    "correctOpt" : "3. alerts"
+    "correctOpt" : "option3"
     },{
     "question": "The condition in an if/else statement is enclosed within ________.",
     "option1" : "1. quotes", 
     "option2" : "2. curly brackets", 
     "option3" : "3. parentheses", 
     "option4" : "4. square brackets",
-    "correctOpt" : "3. parentheses"
+    "correctOpt" : "option3"
     },{
     "question": "Arrays in JavaScript can be used to store ______.",
     "option1" : "1. numbers and strings", 
     "option2" : "2. other arrays", 
     "option3" : "3. booleans", 
     "option4" : "4. all of the above",
-    "correctOpt" : "4. all of the above"
+    "correctOpt" : "option4"
     },{
     "question": "String values must be enclosed within _____ when being assigned to variables.",
     "option1" : "1. commas", 
     "option2" : "2. curly brackets", 
     "option3" : "3. quotes", 
     "option4" : "4. parentheses",
-    "correctOpt" : "3. quotes"
+    "correctOpt" : "option3"
     },{
     "question": "A very useful tool used during development and debugging for printing content to the debugger is:",
     "option1" : "1. JavaScript", 
     "option2" : "2. terminal/bash", 
     "option3" : "3. for loops", 
     "option4" : "4. console.log",
-    "correctOpt" : "4. console.log"
+    "correctOpt" : "option4"
     },
 ]
 
-var lastQuestionIndex = questions.length -1;
 var runningQuestionIndex = 0;
+var lastQuestionIndex = questions.length -1;
 
 function renderQuestion() {
     var q = questions[runningQuestionIndex];
@@ -83,6 +83,36 @@ function renderQuestion() {
 
 renderQuestion();
 
+//make sure user has clicked on one of the options?
+document.addEventListener("click", function(event) {
+    answer = event.target.value;
+    checkAnswer();
+})
+
+function checkAnswer(event) {
+    console.log(event)
+    var answer = event.target.value;
+    if (answer === questions[runningQuestionIndex].correctOpt) {
+    answerIsCorrect();
+    } else {
+    answerIsWrong();
+    }
+    if (runningQuestionIndex < lastQuestionIndex) {
+        runningQuestionIndex++;
+        renderQuestion();
+    }
+}
+
+checkAnswer(event);
+
+//do correct and incorrect work? can I move this to the checkAnswer function?
+function answerIsCorrect() {
+    document.getElementById(runningQuestionIndex).style.backgroundColor = "green";
+}
+
+function answerIsWrong() {
+    document.getElementById(runningQuestionIndex).style.backgroundColor = "red";
+}
 
 
 
