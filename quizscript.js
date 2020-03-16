@@ -21,7 +21,7 @@ setTime(5);
 //need questions and answer options inputted
 //need correct answer to light green and incorrect answer to light right on click
     //or have 'correct' or 'incorrect' show up on screen momentarily
-//need to subtract 10 seconds from the timer for every incorrect answer
+//need to subtract 10 seconds from the timer for every incorrect answer and make sure it does not go below 0
 //need to stop the timer when the final question has been answered
 //need to set final score equal to the time at the time the quiz is done
 //need to save the initials and score to the highscores page
