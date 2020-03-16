@@ -2,20 +2,27 @@ var timerEl = document.querySelector("#timer");
 var startBtnEl = document.querySelector("#startBtn");
 var startPageEl = document.querySelector("#startPage");
 var quizPageEl = document.querySelector("#quizPage");
+var scorePageEl = document.querySelector("#scorePage")
+var scoreEl = document.querySelector("#score")
+var secondsLeft = 75;
+var timerInterval = null;
 
-function setTime(secondsLeft) {
-    var timerInterval = setInterval(function() {
+function setTime() {
+    timerInterval = setInterval(function() {
         if(secondsLeft === 0) {
             clearInterval(timerInterval);
         }
 
         timerEl.textContent = secondsLeft;
         secondsLeft--;
+        if (secondsLeft < 0) {
+            secondsLeft = 0;
+        }
     }, 1000)
 }
 
 function startQuiz() {
-    setTime(5);
+    setTime();
     startPageEl.classList.add("hide");
     quizPageEl.classList.remove("hide");
 }
@@ -121,23 +128,29 @@ function checkAnswer(event) {
         alert("Right");
     } else {
         alert("Wrong");
+        secondsLeft -= 10
+        if (secondsLeft < 0) {
+            secondsLeft = 0;
+        }
     }
 
-    if (runningQuestionIndex < lastQuestionIndex) {
-        runningQuestionIndex++;
+    runningQuestionIndex++;
+
+    if (runningQuestionIndex <= lastQuestionIndex) { 
         renderQuestion();
+    } else {
+        quizPageEl.classList.add("hide");
+        scorePageEl.classList.remove("hide");
+        clearInterval(timerInterval);
+        scoreEl.textContent = secondsLeft + 1;
     }
 }
 
 
 
 
-//need quizPage to disappear and scorePage to appear when final question is answered
-//need correct answer to light green and incorrect answer to light right on click
-    //or have 'correct' or 'incorrect' show up on screen momentarily
-//need to subtract 10 seconds from the timer for every incorrect answer and make sure it does not go below 0
-//need to stop the timer when the final question has been answered
-//need to set final score equal to the time at the time the quiz is done
+
+
 //need to save the initials and score to the highscores page
 //need to save scores/initials on highscores page locally
 //need to delete all scores/initials when 'clear scores' button is pressed
