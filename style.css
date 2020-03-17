@@ -1,3 +1,19 @@
 .row.hide {
     display: none;
 }
+
+.topMarginLg {
+    margin-top: 125px;
+}
+
+.topMarginSm {
+    margin-top: 5px;
+}
+
+.centerAlign {
+    text-align: center;
+}
+
+.btn.btn-primary {
+    background-color: purple;
+}
