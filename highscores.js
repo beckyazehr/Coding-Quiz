@@ -17,5 +17,5 @@ clearScoresEl.addEventListener("click", function() {
 })
 
 goBackEl.addEventListener("click", function() {
-    window.location.href = "quiz.html";
+    window.location.href = "index.html";
 })
