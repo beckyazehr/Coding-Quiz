@@ -1,19 +1,24 @@
+/*hides the rows that are not in use*/
 .row.hide {
     display: none;
 }
 
+/*add margin to move the content from the very top of the page*/
 .topMarginLg {
     margin-top: 125px;
 }
 
+/*adds some margin above the buttons*/
 .topMarginSm {
     margin-top: 5px;
 }
 
+/*centers text on quiz home page and highscores page*/
 .centerAlign {
     text-align: center;
 }
 
+/*makes the button all purple*/
 .btn.btn-primary {
     background-color: purple;
 }

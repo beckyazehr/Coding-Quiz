@@ -1,3 +1,4 @@
+//variable declarations
 var timerEl = document.querySelector("#timer");
 var startBtnEl = document.querySelector("#startBtn");
 var startPageEl = document.querySelector("#startPage");
@@ -9,6 +10,7 @@ var submitEl = document.querySelector("#submit")
 var secondsLeft = 75;
 var timerInterval = null;
 
+//function setting the timer parameters
 function setTime() {
     timerInterval = setInterval(function() {
         if(secondsLeft === 0) {
@@ -23,22 +25,26 @@ function setTime() {
     }, 1000)
 }
 
+//function to start the quiz
 function startQuiz() {
     setTime();
     startPageEl.classList.add("hide");
     quizPageEl.classList.remove("hide");
 }
 
+//event listener on the start button
 startBtnEl.addEventListener("click", function() {
     startQuiz();
 })
 
+//more variable declarations
 var quizQuestionEl = document.querySelector("#quizQuestion");
 var option1El = document.querySelector("#option1");
 var option2El = document.querySelector("#option2");
 var option3El = document.querySelector("#option3");
 var option4El = document.querySelector("#option4");
 
+//object with an array for the 5 questions
 var questions = [
     {
     "question": "Commonly used data types DO NOT include:",
@@ -78,9 +84,11 @@ var questions = [
     },
 ]
 
+//tracking the indexes of which question the user is on and how many questions there are
 var runningQuestionIndex = 0;
 var lastQuestionIndex = questions.length -1;
 
+//function for rendering the questions and answer options to page and then calling on the function
 function renderQuestion() {
     var q = questions[runningQuestionIndex];
     quizQuestionEl.innerHTML = q.question;
@@ -92,7 +100,7 @@ function renderQuestion() {
 
 renderQuestion();
 
-//make sure user has clicked on one of the options?
+//event listeners checking to see which answer option was selected
 option1El.addEventListener("click", function (event) {
     checkAnswer(event);
 })
@@ -105,17 +113,13 @@ option3El.addEventListener("click", function (event) {
 option4El.addEventListener("click", function (event) {
     checkAnswer(event);
 })
-/*
-document.addEventListener("click", function(event) {
-    checkAnswer(event);
-})
-*/
 
+//function to check if the user answer is correct
 function checkAnswer(event) {
     var answer = event.currentTarget;
-    //console.log(answer === option1El)
 
     var correctEl = null;
+
     if (questions[runningQuestionIndex].correctOpt === "option1") {
         correctEl = option1El;
     } else if (questions[runningQuestionIndex].correctOpt === "option2") {
@@ -138,6 +142,8 @@ function checkAnswer(event) {
 
     runningQuestionIndex++;
 
+    //if there are still questions remaining, call renderQuestion again
+    //otherwise move to score page, stop timer, and display user's score
     if (runningQuestionIndex <= lastQuestionIndex) { 
         renderQuestion();
     } else {
@@ -149,6 +155,7 @@ function checkAnswer(event) {
     }
 }
 
+//listening for click on submit button, saves user initials and score locally, sends user to highscores page
 submitEl.addEventListener("click", function() {
     event.preventDefault();
     var initials = inlineFormInputEl.value;

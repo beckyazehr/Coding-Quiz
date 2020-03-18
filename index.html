@@ -13,7 +13,9 @@
 </head>
 
 <body>
+    <!--container for the gridbox-->
     <div class="container">
+        <!--header row with link to highscores page and timer-->
         <div class="row" id="header">
             <div class="col-6 centerAlign">
                 <a id="highscores" href="highscore.html">View Highscores</a>
@@ -22,6 +24,7 @@
                 <div>Timer: <span id="timer">0</span></div>
             </div>
         </div>
+        <!--row with introduction, rules, and start button for quiz-->
         <div class="row centerAlign topMarginLg" id="startPage">
             <div class="col-3"></div>
             <div class="col-6">
@@ -32,6 +35,7 @@
             </div>
             <div class="col-3"></div>
         </div>
+        <!--row with quiz questions and 4 multiple choice options-->
         <div class="row hide topMarginLg" id="quizPage">
             <div class="col-3"></div>
             <div class="col-6">
@@ -46,11 +50,14 @@
             </div>
             <div class="col-3" class=></div>
         </div>
+        <!--row with score page-->
         <div class="row hide topMarginLg" id="scorePage">
             <div class="col-3"></div>
             <div class="col-6">
                 <h2 id="complete">All done!</h2>
+                <!--line that populates users final score-->
                 <p>Your final score is <span id="score"></span>.</p>
+                <!--form for users initials to save score-->
                 <form>
                     <p>Enter initials: </p>
                     <div class="form-row align-items-center">
@@ -67,7 +74,8 @@
             <div class="col-3"></div>
         </div>
     </div>
-
+    
+    <!--link to the JavaScript file-->
     <script src="quizscript.js"></script>
 </body>
 
